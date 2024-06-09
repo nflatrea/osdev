@@ -1,0 +1,9 @@
+[x] multiboot2
+[ ] x64 Kernel
+[ ] GDT/IDT Setup
+[ ] ISR/IRQ handling
+[ ] Paging
+[ ] Keyboard input
+[ ] Kernel heap
+
+...
