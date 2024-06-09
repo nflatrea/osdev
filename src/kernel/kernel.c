@@ -12,5 +12,5 @@ void write_string( int colour, const char *string )
 
 void kmain()
 {
-	write_string(0xf5, "Hello World\0");
+	write_string(0x3f, "Hello World\0");
 }

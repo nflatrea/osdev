@@ -7,9 +7,9 @@ QEMU=qemu-system-i386
 AFLAGS := -felf32
 CFLAGS := -m32 -ffreestanding -std=gnu99 -Wall -Wextra
 # CFLAGS += -I ./include
-LFLAGS= -melf_i386 -nostdlib -T ./link.ld
+LFLAGS= -melf_i386 -nostdlib -T ./src/kernel/link.ld
 
-.PHONY: all
+.PHONY: all $(TARGET) $(KERNEL) $(OBJ)
 
 SRC := $(shell find -type f -name *.c)
 SRC += $(shell find -type f -name *.asm)
@@ -49,4 +49,4 @@ $(KERNEL): $(OBJ)
 %.o: %.asm
 	$(AS) $(AFLAGS) -o $@ $<
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< $@
+	$(CC) $(CFLAGS) -c $< -o $@
